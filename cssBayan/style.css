@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #151515;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 80%;
+  max-width: 1000px;
+  background: #222222;
+  border: 0.125rem solid #393939;
+  border-radius: 10px;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  border-bottom: 0.0625rem solid #393939;
+  cursor: pointer;
+}
+
+.accordion__item:last-child {
+  border-bottom: transparent;
+}
+
+.accordion__link {
+  color: #dedede;
+  font-size: 1.5rem;
+  transition: color 0.5s ease-in-out;
+}
+
+.accordion__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus {
+  color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.accordion__submenu {
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.accordion__item img {
+  height: 100%;
+  margin: auto;
+  padding: 1%;
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* target */
+
+.accordion__item:target .accordion__submenu {
+  max-height: 25rem;
+}
+
+.accordion__item:target img {
+  height: 100%;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.accordion__item:target .accordion__link {
+  color: #ffffff;
+}
+
+.accordion__item:target .plus {
+  transform: rotate(45deg);
+}
+
+/* hover */
+@media (hover: hover) {
+  .accordion:hover .accordion__link,
+  .accordion:hover .plus {
+    color: #ffffff;
+  }
+
+  .accordion__item:hover .accordion__submenu {
+    max-height: 25rem;
+  }
+
+  .accordion__item:hover img {
+    height: 100%;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .accordion__item:hover .accordion__link {
+    color: #ffffff;
+  }
+
+  .accordion__item:hover .plus {
+    transform: rotate(45deg);
+  }
+}
+
+/* media */
+@media (max-width: 990px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  .accordion__link {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .accordion {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  .accordion__link {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  .accordion__link {
+    font-size: 0.8rem;
+  }
+}

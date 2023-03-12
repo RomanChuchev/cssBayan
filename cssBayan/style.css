@@ -30,6 +30,7 @@ h1 {
   padding: 10px 15px;
   border-bottom: 1px solid #393939;
 }
+
 .accordion__item:last-child {
   border-bottom: transparent;
 }
@@ -68,7 +69,7 @@ h1 {
 }
 
 .accordion__item:target .accordion__submenu {
-  max-height: 600px;
+  max-height: 400px;
 }
 
 .accordion__item:target .accordion__link {
@@ -92,4 +93,28 @@ h1 {
 .accordion:hover .accordion__link,
 .accordion:hover .plus {
   color: #ffffff;
+}
+
+/* hover */
+
+.accordion__item:hover .accordion__submenu {
+  max-height: 400px;
+}
+
+.accordion__item:hover .accordion__link {
+  margin-bottom: 10px;
+}
+
+.accordion__item:hover img {
+  height: 100%;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.accordion__item:hover .accordion__link {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.accordion__item:hover .plus {
+  transform: rotate(45deg);
 }

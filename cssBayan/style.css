@@ -91,29 +91,31 @@ h1 {
 }
 
 /* hover */
+@media (hover: hover) {
+  .accordion:hover .accordion__link,
+  .accordion:hover .plus {
+    color: #ffffff;
+  }
 
-.accordion:hover .accordion__link,
-.accordion:hover .plus {
-  color: #ffffff;
+  .accordion__item:hover .accordion__submenu {
+    max-height: 25rem;
+  }
+
+  .accordion__item:hover img {
+    height: 100%;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .accordion__item:hover .accordion__link {
+    color: #ffffff;
+  }
+
+  .accordion__item:hover .plus {
+    transform: rotate(45deg);
+  }
 }
 
-.accordion__item:hover .accordion__submenu {
-  max-height: 25rem;
-}
-
-.accordion__item:hover img {
-  height: 100%;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.accordion__item:hover .accordion__link {
-  color: #ffffff;
-}
-
-.accordion__item:hover .plus {
-  transform: rotate(45deg);
-}
-
+/* media */
 @media (max-width: 990px) {
   h1 {
     font-size: 1.7rem;
